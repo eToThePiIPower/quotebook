@@ -1,0 +1,40 @@
+<div class="container">
+  <%= render 'errors' %>
+
+  <h1>Change your password</h1>
+
+  <div class="card card-default">
+    <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="form-group">
+          <%= f.label :password, "New password" %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off",
+            class: "form-control", placeholder: "Password",
+            aria: { describedby: "passwordHelpBlock" } %>
+          <% if @minimum_password_length %>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+              (<%= @minimum_password_length %> characters minimum)
+            </small>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirm new password" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off",
+            class: "form-control", placeholder: "Password confirmation" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Change my password",
+            class: "btn btn-primary form-control" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card-footer">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

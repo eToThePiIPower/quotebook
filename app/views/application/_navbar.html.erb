@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="#">Quotebook</a>
+  <a class="navbar-brand" href="/">Quotebook</a>
   <button class="navbar-toggler" type="button"
           data-toggle="collapse" data-target="#navbar"
           aria-expanded="false" aria-controls="navbar"
@@ -9,19 +9,17 @@
 
   <div id="navbar" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="#">About</a></li>
       <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
     </ul>
     <hr class="dropdown-divider">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign in</a>
-      </li>
-      <span class="navbar-text d-none d-md-inline">or</span>
-      <li class="nav-item">
-        <a class="btn btn-outline-primary my-2 my-md-0 ml-md-2" href="#">Sign up</a>
-      </li>
+      <% if user_signed_in? %>
+        <%= render 'navbar/user_menu' %>
+      <% else %>
+        <%= render 'navbar/signup_menu' %>
+      <% end %>
     </ul>
   </div>
 </nav>

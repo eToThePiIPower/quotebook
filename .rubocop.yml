@@ -5,6 +5,15 @@ AllCops:
     - 'node_modules/**/*'
     - 'bin/*'
 
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**'

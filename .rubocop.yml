@@ -1,0 +1,27 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'bin/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/**'
+
+Metrics/LineLength:
+  Max: 100
+  IgnoredPatterns: ['\A\s*#']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+    Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets

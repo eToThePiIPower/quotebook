@@ -10,6 +10,7 @@ gem 'puma', '~> 3.11'
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise', '~> 4.4.3'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.3'
 gem 'sass-rails', '~> 5.0'

@@ -1,7 +1,13 @@
-<h1>New Quote</h1>
+<div class="container">
+  <h1>New Quote</h1>
 
-<div id="quote-form">
-  <%= render 'form', quote: @quote %>
+  <div id="quote-form" class="card">
+    <div class="card-body">
+      <%= render 'form', quote: @quote %>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Back', quotes_path %>
+    </div>
+  </div>
 </div>
-
-<%= link_to 'Back', quotes_path %>

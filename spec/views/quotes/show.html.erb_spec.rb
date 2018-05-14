@@ -7,5 +7,8 @@ RSpec.describe 'quotes/show', type: :view do
 
   it 'renders attributes in <p>' do
     render
+
+    expect(rendered).to match @quote.text
+    expect(rendered).to match @quote.source
   end
 end

@@ -1,0 +1,16 @@
+@import 'bootstrap';
+
+.quote-text {
+  font-size: $h4-font-size;
+  font-style: italic;
+  font-weight: thin;
+}
+
+.quote-source {
+  color: $text-muted;
+
+  &::before {
+    content: '\2014';
+    margin-right: .5em;
+  }
+}

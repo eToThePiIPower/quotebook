@@ -1,6 +1,16 @@
-<h1>Editing Quote</h1>
+<div class="container">
+  <%= render 'errors' %>
 
-<%= render 'form', quote: @quote %>
+  <h1>Editing Quote</h1>
 
-<%= link_to 'Show', @quote %> |
-<%= link_to 'Back', quotes_path %>
+  <div id="quote-form" class="card">
+    <div class="card-body">
+      <%= render 'form', quote: @quote %>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Show', @quote %> |
+      <%= link_to 'Back', quotes_path %>
+    </div>
+  </div>
+</div>

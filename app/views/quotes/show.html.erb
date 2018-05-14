@@ -1,7 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="card card-default">
+    <div class="card-body">
+      <p class=quote-text><%= @quote.text %></p>
+      <span class="quote-source"><%= @quote.source %></span>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_quote_path(@quote) %>
+      <%= link_to 'Back', quotes_path %>
+      <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>
 
-<p><%= @quote.text %></p>
-<p><%= @quote.source %></p>
 
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>

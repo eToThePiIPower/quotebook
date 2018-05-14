@@ -9,6 +9,10 @@ Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+
 Metrics/LineLength:
   Max: 100
   IgnoredPatterns: ['\A\s*#']

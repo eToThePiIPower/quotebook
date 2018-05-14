@@ -5,8 +5,8 @@
   <ul class="list-group quotes-index">
     <% @quotes.each do |quote| %>
       <%= link_to quote, class: "list-group-item list-group-item-action index-quote" do %>
-        <h2 class="h4"><%= quote.text %></h2>
-        <div><%= quote.source %></div>
+        <h2 class="quote-text"><%= quote.text %></h2>
+        <span class="quote-source"><%= quote.source %></span>
       <% end %>
     <% end %>
   </ul>

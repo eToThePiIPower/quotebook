@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 3.1'
+  gem 'dotenv-rails', '~> 2.4.0'
   gem 'factory_bot_rails', '~> 4.8'
   gem 'poltergeist', '~> 1.18'
   gem 'rspec-rails', '~> 3.7'

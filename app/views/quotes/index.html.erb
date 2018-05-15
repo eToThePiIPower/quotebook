@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Quotes</h1>
+  <ul class="list-group quotes-index">
+    <% @quotes.each do |quote| %>
+      <%= link_to quote, class: "list-group-item list-group-item-action index-quote" do %>
+        <h2 class="quote-text"><%= quote.text %></h2>
+        <span class="quote-source"><%= quote.source %></span>
+        <span class="small text-muted d-block text-right"><%= quote.user.username %></span>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <% if user_signed_in? %>
+    <div class="actions my-4">
+      <%= link_to 'New Quote', new_quote_path, class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+</div>

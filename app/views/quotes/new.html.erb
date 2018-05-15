@@ -1,0 +1,15 @@
+<div class="container">
+  <%= render 'errors' %>
+
+  <h1>New Quote</h1>
+
+  <div id="quote-form" class="card">
+    <div class="card-body">
+      <%= render 'form', quote: @quote %>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Back', quotes_path %>
+    </div>
+  </div>
+</div>

@@ -5,9 +5,23 @@ AllCops:
     - 'node_modules/**/*'
     - 'bin/*'
 
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+    - 'spec/**/*'
 
 Metrics/LineLength:
   Max: 100
@@ -25,3 +39,6 @@ Style/FrozenStringLiteralComment:
 
 Style/SymbolArray:
   EnforcedStyle: brackets
+
+Rails:
+  Enabled: true

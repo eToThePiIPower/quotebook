@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card card-default">
+    <div class="card-body">
+      <p class=quote-text><%= @quote.text %></p>
+      <span class="quote-source"><%= @quote.source %></span>
+      <span class="small text-muted d-block text-right"><%= @quote.user.username %></span>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Back', quotes_path %>
+      <% if user_signed_in? && current_user == @quote.user %>
+        <%= link_to 'Edit', edit_quote_path(@quote) %>
+        <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+

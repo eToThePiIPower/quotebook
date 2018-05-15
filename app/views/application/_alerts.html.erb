@@ -1,0 +1,23 @@
+<div class="container alerts my-4">
+
+  <% if notice %>
+    <div class="alert alert-dismissable alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Notice:</strong>
+      <span><%= notice %></span>
+    </div>
+  <% end %>
+
+  <% if alert %> 
+    <div class="alert alert-dismissable alert-warning">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Alert:</strong>
+      <span><%= alert %></span>
+    </div>
+  <% end %>
+
+</div>

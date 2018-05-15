@@ -1,15 +1,14 @@
 <div class="container">
   <div class="quote-card-wrapper">
-    <a class="quote-user-img-link" href="#">
+    <%= link_to @quote.user, class: "quote-user-img-link" do %>
       <img src="<%= gravatar_url(@quote.user.email, 64)%>"
            alt="" class="quote-user-img" />
-    </a>
+    <% end %>
 
     <div class="card quote-card">
       <div class="card-header quote-header">
-        <a class="quote-user-link" href="#">
-          <%= @quote.user.username %>
-        </a>
+        <%= link_to @quote.user.username,
+          @quote.user, class: "quote-user-link" %>
         <span class="small text-muted">posted</span>
       </div>
 

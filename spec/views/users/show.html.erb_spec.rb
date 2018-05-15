@@ -22,4 +22,17 @@ RSpec.describe 'users/show.html.erb', type: :view do
 
     expect(rendered).to have_selector '.list-group-item.index-quote', count: 2
   end
+
+  context 'when the user has a profile set' do
+    before(:each) do
+      @profile = create(:profile, user: @user)
+    end
+
+    it 'renders the profile data' do
+      render
+
+      expect(rendered).to have_selector '.card-body',
+        text: @profile.about_me
+    end
+  end
 end

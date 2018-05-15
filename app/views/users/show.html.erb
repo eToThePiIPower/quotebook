@@ -2,7 +2,7 @@
   <div class="row my-5">
 
     <!-- Profile card -->
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card">
         <h1 class="h6 card-header">
           <span class="sr-only">User profile for</span>
@@ -12,8 +12,20 @@
              src="<%= gravatar_url(@user.email, 128) %>" />
 
         <div class="card-body">
-          <blockquote class="blockquote">
-            Hello World
+          <div class="small card-profile-location">
+            <%= @user.profile.location %>
+          </div>
+
+          <div class="small card-profile-homepage">
+            <a href="<%= @user.profile.home_page %>">
+              <%= @user.profile.home_page %>
+            </a>
+          </div>
+
+          <hr/>
+
+          <blockquote class="card-profile-about">
+            <%= @user.profile.about_me %>
           </blockquote>
         </div>
 
@@ -25,7 +37,7 @@
     </div> <!-- /.col-md-3 -->
 
     <!-- Quotes list -->
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h2 class="h4">Quotes by <%= @user.username %></h2>
       <ul class="list-group quotes-index">
         <% @user.quotes.each do |quote| %>

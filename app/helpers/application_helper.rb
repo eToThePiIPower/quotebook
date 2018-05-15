@@ -1,6 +1,11 @@
 module ApplicationHelper
-  def gravatar_url(email, size = 256)
+  def gravatar_url(email, size = nil)
     gravatar = Digest::MD5.hexdigest(email).downcase
-    "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
+
+    if size.nil?
+      "http://gravatar.com/avatar/#{gravatar}.png"
+    else
+      "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
+    end
   end
 end

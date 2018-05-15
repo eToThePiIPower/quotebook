@@ -4,7 +4,7 @@
       <div class="card">
         <h1 class="h4 card-header"><%= @user.username %></h1>
         <img class="card-img-inline w-100" alt=""
-             src="<%= gravatar_url(@user.email) %>" />
+             src="<%= gravatar_url(@user.email, 128) %>" />
 
         <div class="card-body">
           <blockquote class="blockquote">

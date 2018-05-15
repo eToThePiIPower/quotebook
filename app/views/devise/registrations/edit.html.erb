@@ -26,6 +26,26 @@
           <% end %>
         </div>
 
+        <%= f.fields_for :profile, @user.profile do |pf| %>
+          <div class="form-group">
+            <%= pf.label :about_me %>
+            <%= pf.text_area :about_me,
+              class: "form-control", rows: 3 %>
+          </div>
+
+          <div class="form-group">
+            <%= pf.label :location %>
+            <%= pf.text_field :location,
+              class: "form-control", placeholder: "Location" %>
+          </div>
+
+          <div class="form-group">
+            <%= pf.label :home_page %>
+            <%= pf.url_field :home_page,
+              class: "form-control", placeholder: "Home page" %>
+          </div>
+        <% end %>
+
         <div class="form-group">
           <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "off",

@@ -8,9 +8,14 @@ RSpec.feature 'the signup proces', type: :feature do
       fill_in 'Username', with: 'user@exmample.com'
       fill_in 'Password', with: 'password'
       fill_in 'Password confirmation', with: 'password'
+
+      fill_in 'About me', with: 'I am Groot'
+      fill_in 'Location', with: 'Somewhere'
+      fill_in 'Home page', with: 'http://example.com'
     end
     click_button 'Sign up'
 
     expect(page).to have_content 'You have signed up successfully'
+    expect(User.last.profile.about_me).to eq 'I am Groot'
   end
 end

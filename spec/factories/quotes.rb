@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :quote do
+    user
     text 'MyText'
     source 'MyString'
 

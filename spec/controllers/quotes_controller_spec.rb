@@ -24,7 +24,7 @@ RSpec.describe QuotesController, type: :controller do
 
   describe 'GET #show' do
     it 'returns a success response' do
-      quote = Quote.create! valid_attributes
+      quote = create(:quote)
       get :show, params: { id: quote.to_param }, session: valid_session
       expect(response).to be_successful
     end
@@ -39,13 +39,17 @@ RSpec.describe QuotesController, type: :controller do
 
   describe 'GET #edit' do
     it 'returns a success response' do
-      quote = Quote.create! valid_attributes
+      quote = create(:quote)
       get :edit, session: valid_session, params: { id: quote.to_param }
       expect(response).to be_successful
     end
   end
 
   describe 'POST #create' do
+    before(:each) do
+      sign_in create(:user)
+    end
+
     context 'with valid params' do
       it 'creates a new Quote' do
         expect do

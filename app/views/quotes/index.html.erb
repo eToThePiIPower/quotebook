@@ -9,8 +9,9 @@
     <% end %>
   </ul>
 
-  <div class="actions my-4">
-    <%= link_to 'New Quote', new_quote_path, class: "btn btn-lg btn-primary" %>
-  </div>
-
+  <% if user_signed_in? %>
+    <div class="actions my-4">
+      <%= link_to 'New Quote', new_quote_path, class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
 </div>

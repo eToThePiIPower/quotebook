@@ -5,9 +5,11 @@
       <span class="quote-source"><%= @quote.source %></span>
     </div>
     <div class="card-footer">
-      <%= link_to 'Edit', edit_quote_path(@quote) %>
       <%= link_to 'Back', quotes_path %>
-      <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if user_signed_in? && current_user == @quote.user %>
+        <%= link_to 'Edit', edit_quote_path(@quote) %>
+        <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     </div>
   </div>
 </div>

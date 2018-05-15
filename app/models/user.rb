@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :username
-  validates_length_of :username, minimum: 5
+  validates :username, length: { minimum: 5 }
+  validates :username, presence: true
 end

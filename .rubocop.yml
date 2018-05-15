@@ -39,3 +39,6 @@ Style/FrozenStringLiteralComment:
 
 Style/SymbolArray:
   EnforcedStyle: brackets
+
+Rails:
+  Enabled: true

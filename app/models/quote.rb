@@ -1,4 +1,4 @@
 class Quote < ApplicationRecord
-  validates_presence_of :source
-  validates_presence_of :text
+  validates :source, presence: true
+  validates :text, presence: true
 end

@@ -5,6 +5,7 @@
       <%= link_to quote, class: "list-group-item list-group-item-action index-quote" do %>
         <h2 class="quote-text"><%= quote.text %></h2>
         <span class="quote-source"><%= quote.source %></span>
+        <span class="small text-muted d-block text-right"><%= quote.user.username %></span>
       <% end %>
     <% end %>
   </ul>

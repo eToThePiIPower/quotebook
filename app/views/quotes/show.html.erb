@@ -3,6 +3,7 @@
     <div class="card-body">
       <p class=quote-text><%= @quote.text %></p>
       <span class="quote-source"><%= @quote.source %></span>
+      <span class="small text-muted d-block text-right"><%= @quote.user.username %></span>
     </div>
     <div class="card-footer">
       <%= link_to 'Back', quotes_path %>

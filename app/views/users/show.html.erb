@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3">
+      <div class="card">
+        <h1 class="h4 card-header"><%= @user.username %></h1>
+        <img class="card-img-inline w-100" alt=""
+             src="<%= gravatar_url(@user.email) %>" />
+
+        <div class="card-body">
+          <blockquote class="blockquote">
+            Hello World
+          </blockquote>
+        </div>
+
+        <div class="card-footer small">
+          <span>Joined on</span>
+          <span><%= @user.created_at %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,13 @@
 <div class="container">
   <div class="row my-5">
+
+    <!-- Profile card -->
     <div class="col-md-3">
       <div class="card">
-        <h1 class="h4 card-header"><%= @user.username %></h1>
+        <h1 class="h6 card-header">
+          <span class="sr-only">User profile for</span>
+          <%= @user.username %>
+        </h1>
         <img class="card-img-inline w-100" alt=""
              src="<%= gravatar_url(@user.email, 128) %>" />
 
@@ -17,6 +22,21 @@
           <span><%= @user.created_at %></span>
         </div>
       </div>
-    </div>
+    </div> <!-- /.col-md-3 -->
+
+    <!-- Quotes list -->
+    <div class="col-md-9">
+      <h2 class="h4">Quotes by <%= @user.username %></h2>
+      <ul class="list-group quotes-index">
+        <% @user.quotes.each do |quote| %>
+          <%= link_to quote,
+            class: "list-group-item list-group-item-action index-quote" do %>
+            <h3 class="quote-text"><%= quote.text %></h3>
+            <span class="quote-source"><%= quote.source %></span>
+          <% end %>
+        <% end %>
+      </ul>
+    </div> <!-- /.col-md-9 -->
+
   </div>
 </div>

@@ -3,13 +3,22 @@
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
 version: 2
+
+working_directory: ~/quotebook
+
 jobs:
   build:
     docker:
        - image: circleci/ruby:2.5.1-node-browsers
-       - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
+         environment:
+           RAILS_ENV: test
+           PGHOST: localhost
+           PGUSER: quotebook
+       - image: circleci/postgres:9.5
+         environment:
+           POSTGRES_USER: quotebook
+           POSTGRES_DB: quotebook_test
+           POSTGRES_PASSWORD: ""
 
     steps:
       - checkout
@@ -30,6 +39,9 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Wait for the DB
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       # Database setup
       - run: bundle exec rake db:create

@@ -49,7 +49,7 @@ guard :rspec, cmd: 'bin/rspec' do
     [
       rspec.spec.call("routing/#{m[1]}_routing"),
       rspec.spec.call("controllers/#{m[1]}_controller"),
-      rspec.spec.call("acceptance/#{m[1]}")
+      rspec.spec.call("acceptance/#{m[1]}"),
     ]
   end
 
@@ -74,4 +74,9 @@ guard 'spring', bundler: true do
   watch(%r{^config/})
   watch(%r{^spec/(support|factories)/})
   watch(%r{^spec/factory.rb})
+end
+
+guard :rubocop do
+  watch(/.+\.rb$/)
+  watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end

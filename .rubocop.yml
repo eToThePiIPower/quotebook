@@ -6,6 +6,72 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**/*'
 
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    includes:
+      - include
+      - prepend
+      - extend
+    attr_macros:
+      - attr_accessible
+      - attr_accessor
+      - attr_reader
+      - attr_writer
+    associations:
+      - accepts_nested_attributes_for
+      - belongs_to
+      - has_and_belongs_to_many
+      - has_many
+      - has_one
+    callbacks:
+      # Really, prefer in this order, but not being linted on that
+      - after_initialize
+      - before_validation
+      - after_validation
+      - before_save
+      - around_save
+      - before_create
+      - before_update
+      - around_create
+      - around_update
+      - after_create
+      - after_update
+      - after_save
+      - before_destroy
+      - around_destroy
+      - after_destroy
+      - after_commit
+      - after_rollback
+    scopes:
+      - scope
+    macros:
+      # The rest of the built-in stuff + Devise
+      - devise
+      - serialize
+  ExpectedOrder:
+    # https://github.com/bbatsov/rails-style-guide#activerecord
+    # General PlainOldRuby
+    - includes
+    - constants
+    # ActiveControllerStuff
+    - before_action
+    # ActiveRecord stuff
+    - default_scope
+    - attr_macros
+    - enum
+    - associations
+    - validates
+    - callbacks
+    - scopes
+    - macros
+    - delegate
+    # General PlainOldRuby
+    - public_class_methods
+    - initializer
+    - public_methods
+    - private_methods
+
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
@@ -40,6 +106,15 @@ Style/FrozenStringLiteralComment:
 
 Style/SymbolArray:
   EnforcedStyle: brackets
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
 
 Rails:
   Enabled: true

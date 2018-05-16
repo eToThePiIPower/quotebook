@@ -66,6 +66,11 @@ RSpec.configure do |config|
   # particularly slow.
   config.profile_examples = 10
 
+  # If there is a failure, fail immediately and quite. This has the effect of
+  # hiding the above profiled examples on failures, highlighting the actual
+  # failure instead. Can be skipped at the CLI with --no-fail-fast.
+  config.fail_fast = true
+
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.

@@ -4,7 +4,7 @@ RSpec.describe 'api/v0/quotes/index', type: :view do
   before(:each) do
     @quotes = assign(:quotes, [
       create(:quote, text: 'MyText1'),
-      create(:quote, text: 'MyText2')
+      create(:quote, text: 'MyText2'),
     ])
   end
 
@@ -30,7 +30,7 @@ RSpec.describe 'api/v0/quotes/index', type: :view do
     expect(quotes_hashes['data']['quotes'][0]).to include(
       'id' => @quotes[0].id,
       'text' => @quotes[0].text,
-      'source' => @quotes[0].source
+      'source' => @quotes[0].source,
     )
   end
 

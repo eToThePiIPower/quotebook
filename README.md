@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/eToThePiIPower/quotebook.svg?style=svg)](https://circleci.com/gh/eToThePiIPower/quotebook)
 
-(notes for v0.1.0)
+(notes for v0.2.0)
 
 Quotebook will be a simple application for collecting, managing, and recalling
 interesting quotations and snippets. I was inspired to write it for two reasons:
@@ -14,14 +14,16 @@ interesting quotations and snippets. I was inspired to write it for two reasons:
 * It would be to offer offline capabilities since I'm often on the subway when
   reading the passages that inspire me.
 
+This project is a small personal project not really meant for production use.
+Please utilize caution if you plan to deploy it.
+
 ## System dependencies
 
-* Ruby 2.5.1
-* postgresql
+* Ruby 2.5.1 
+* Rails 5.2+
+* postgresql (9.5+, untested on earlier) ## Configuration 
 
-## Configuration
-
-I'm using Spring & Guard so you may need to use the binstub versions instead of
+We're using Spring & Guard so you may need to use the binstub versions instead of
 the standard commands.
 
 ```
@@ -30,7 +32,7 @@ bin/rake db:setup
 bin/rails server
 ```
 
-I'm also using dotenv for environment variable management. You will probably
+We're also using dotenv for environment variable management. You will probably
 need to set a Devise secret key in by creating a `.env` file and adding the
 following line:
 
@@ -41,10 +43,14 @@ DEVISE_SECRET_KEY=<any random 128-bit hex number>
 If you don't do this, you may get an error on database setup that includes a
 generated secret key you can use.
 
-## Tests
+## Testing
 
-You can run RSpec
+Quotebook utilizes CircleCI for continuous integration, which runs both the
+RSpec test suite and Rubocop linting tool. You can run them in your development
+environment in the usual manner:
 
 ```
-bin/rspec
+bundle exec rspec
+bundle exec rubocop
+
 ```

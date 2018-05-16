@@ -22,11 +22,20 @@ RSpec.describe 'api/v0/quotes/show', type: :view do
       'text' => @quote.text,
       'source' => @quote.source
     )
+  end
+
+  it 'has the correct data schema' do
+    render
+    quote_hash = JSON.parse(rendered)
+
     expect(quote_hash['data']).to include(
-      'created_at',
-      'updated_at',
-      'url',
+      'id', 'created_at', 'updated_at', 'url',
+      'text', 'source',
       'user'
+    )
+    expect(quote_hash['data']['user']).to include(
+      'id', 'url',
+      'username', 'gravatar'
     )
   end
 

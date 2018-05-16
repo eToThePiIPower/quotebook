@@ -27,3 +27,20 @@
   border-radius: $input-border-radius;
   color: $input-color;
 }
+
+.form-group {
+  label {
+    color: $text-muted;
+    font-size: $font-size-sm;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+.form-control-textarea-2x {
+  height: calc(2*(2px + 1.5rem + 2*0.375rem + 1rem + #{$font-size-sm}*1.5 + 3px) - 1rem - #{$font-size-sm}*1.5 - 3px);
+}
+
+.form-control-textarea-3x {
+  height: calc(3*(2px + 1.5rem + 2*0.375rem + 1rem + #{$font-size-sm}*1.5 + 3px) - 1rem - #{$font-size-sm}*1.5 - 3px);
+}

@@ -1,5 +1,7 @@
 # Quotebook
 
+[![CircleCI](https://circleci.com/gh/eToThePiIPower/quotebook.svg?style=svg)](https://circleci.com/gh/eToThePiIPower/quotebook)
+
 (notes for v0.1.0)
 
 Quotebook will be a simple application for collecting, managing, and recalling

@@ -26,6 +26,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.8'
   gem 'poltergeist', '~> 1.18'
   gem 'rspec-rails', '~> 3.7'
+  gem 'rspec_junit_formatter', '~> 0.3'
   gem 'rubocop', '~> 0.55'
   gem 'shoulda-matchers', '~> 3.1'
 end

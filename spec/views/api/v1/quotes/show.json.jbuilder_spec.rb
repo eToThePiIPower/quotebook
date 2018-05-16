@@ -36,6 +36,9 @@ RSpec.describe 'api/v1/quotes/show', type: :view do
 
     expect(quote_hash['data']['user']).not_to include(
       'email',
+      'password',
+      'password_confirmation',
+      'password_digest',
     )
   end
 end

@@ -25,28 +25,20 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    respond_to do |format|
-      if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
-        format.json { render :show, status: :created, location: @quote }
-      else
-        format.html { render :new }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
+    if @quote.save
+      redirect_to @quote, notice: 'Quote was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /quotes/1
   # PATCH/PUT /quotes/1.json
   def update
-    respond_to do |format|
-      if @quote.update(quote_params)
-        format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
-        format.json { render :show, status: :ok, location: @quote }
-      else
-        format.html { render :edit }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
+    if @quote.update(quote_params)
+      redirect_to @quote, notice: 'Quote was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -54,10 +46,7 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1.json
   def destroy
     @quote.destroy
-    respond_to do |format|
-      format.html { redirect_to quotes_url, notice: 'Quote was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to quotes_url, notice: 'Quote was successfully destroyed.'
   end
 
   private
@@ -71,10 +60,7 @@ class QuotesController < ApplicationController
   def set_authorized_quote
     @quote = current_user.quotes.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    respond_to do |f|
-      f.html { redirect_to quotes_url, alert: "Quote does not exist or you don't own it" }
-      f.json {}
-    end
+    redirect_to quotes_url, alert: "Quote does not exist or you don't own it"
   end
 
   # Create a new quote for the current user

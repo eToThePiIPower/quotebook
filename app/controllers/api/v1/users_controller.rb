@@ -11,7 +11,7 @@ module Api
         render json: {
           status: 'error',
           code: 3000,
-          message: 'Record not found',
+          message: 'Record not found'
         }
       end
     end

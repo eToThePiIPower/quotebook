@@ -28,10 +28,10 @@ RSpec.describe 'api/v1/quotes/index', type: :view do
     quotes_hashes = JSON.parse(rendered)
 
     expect(quotes_hashes['data']['quotes'][0]).to include(
-      'id' => @quotes[0].id,
+      'id' => @quotes[0].id
     )
     expect(quotes_hashes['data']['quotes'][1]).to include(
-      'id' => @quotes[1].id,
+      'id' => @quotes[1].id
     )
   end
 end

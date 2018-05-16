@@ -20,13 +20,13 @@ RSpec.describe 'api/v1/quotes/show', type: :view do
     expect(quote_hash['data']).to include(
       'id' => @quote.id,
       'text' => @quote.text,
-      'source' => @quote.source,
+      'source' => @quote.source
     )
     expect(quote_hash['data']).to include(
       'created_at',
       'updated_at',
       'url',
-      'user',
+      'user'
     )
   end
 
@@ -38,7 +38,7 @@ RSpec.describe 'api/v1/quotes/show', type: :view do
       'email',
       'password',
       'password_confirmation',
-      'password_digest',
+      'password_digest'
     )
   end
 end

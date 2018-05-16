@@ -25,8 +25,7 @@ RSpec.describe 'api/v0/users/show', type: :view do
       'home_page' => @user.profile.home_page
     )
     expect(user_hash['data']).to include(
-      'created_at',
-      'updated_at'
+      'created_at'
     )
   end
 
@@ -38,7 +37,8 @@ RSpec.describe 'api/v0/users/show', type: :view do
       'email',
       'password',
       'password_confirmation',
-      'password_digest'
+      'password_digest',
+      'updated_at'
     )
   end
 end

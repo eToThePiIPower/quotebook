@@ -4,7 +4,7 @@ RSpec.describe 'api/v0/users/index', type: :view do
   before(:each) do
     @users = assign(:users, [
       create(:user, username: 'User1'),
-      create(:user, username: 'User2')
+      create(:user, username: 'User2'),
     ])
   end
 
@@ -28,10 +28,10 @@ RSpec.describe 'api/v0/users/index', type: :view do
     users_hash = JSON.parse(rendered)
 
     expect(users_hash['data']['users'][0]).to include(
-      'id' => @users[0].id
+      'id' => @users[0].id,
     )
     expect(users_hash['data']['users'][1]).to include(
-      'id' => @users[1].id
+      'id' => @users[1].id,
     )
   end
 
@@ -53,7 +53,7 @@ RSpec.describe 'api/v0/users/index', type: :view do
       'email',
       'password',
       'password_confirmation',
-      'password_digest'
+      'password_digest',
     )
   end
 end

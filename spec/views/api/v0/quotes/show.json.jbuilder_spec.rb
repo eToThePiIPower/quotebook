@@ -20,7 +20,7 @@ RSpec.describe 'api/v0/quotes/show', type: :view do
     expect(quote_hash['data']).to include(
       'id' => @quote.id,
       'text' => @quote.text,
-      'source' => @quote.source
+      'source' => @quote.source,
     )
   end
 
@@ -47,7 +47,7 @@ RSpec.describe 'api/v0/quotes/show', type: :view do
       'email',
       'password',
       'password_confirmation',
-      'password_digest'
+      'password_digest',
     )
   end
 end

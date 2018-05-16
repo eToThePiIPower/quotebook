@@ -17,7 +17,7 @@ RSpec.describe 'quotes/show', type: :view do
     render
 
     expect(rendered).to have_xpath(
-      "//img[contains(@src, '#{gravatar_url(@quote.user.email)}')]"
+      "//img[contains(@src, '#{gravatar_url(@quote.user.email)}')]",
     )
   end
 

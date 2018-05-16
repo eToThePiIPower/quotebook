@@ -11,7 +11,7 @@ RSpec.describe 'users/show.html.erb', type: :view do
 
     expect(rendered).to have_selector 'h1.card-header', text: 'MyName'
     expect(rendered).to have_xpath(
-      "//img[contains(@src, '#{gravatar_url(@user.email)}')]"
+      "//img[contains(@src, '#{gravatar_url(@user.email)}')]",
     )
   end
 

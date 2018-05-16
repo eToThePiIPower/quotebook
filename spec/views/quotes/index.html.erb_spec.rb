@@ -4,7 +4,7 @@ RSpec.describe 'quotes/index', type: :view do
   before(:each) do
     @quotes = assign(:quotes, [
       create(:quote, text: 'MyText1'),
-      create(:quote, text: 'MyText2')
+      create(:quote, text: 'MyText2'),
     ])
     allow(view).to receive(:user_signed_in?).and_return(false)
   end

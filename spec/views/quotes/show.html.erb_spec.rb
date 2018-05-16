@@ -6,11 +6,19 @@ RSpec.describe 'quotes/show', type: :view do
     allow(view).to receive(:user_signed_in?).and_return(false)
   end
 
-  it 'renders attributes in <p>' do
+  it 'renders attributes in a card' do
     render
 
-    expect(rendered).to match @quote.text
-    expect(rendered).to match @quote.source
+    expect(rendered).to have_selector '.card-body', text:  @quote.text
+    expect(rendered).to have_selector '.card-body', text:  @quote.source
+  end
+
+  it 'renders the user gravatar' do
+    render
+
+    expect(rendered).to have_xpath(
+      "//img[contains(@src, '#{gravatar_url(@quote.user.email)}')]",
+    )
   end
 
   it 'does not render action links' do

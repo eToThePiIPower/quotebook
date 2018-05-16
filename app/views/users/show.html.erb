@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row my-5">
+
+    <!-- Profile img xs -->
+    <div class="col-5 d-md-none">
+      <img class="w-100 rounded border"
+           src="<%= gravatar_url(@user.email, 256) %>" alt="">
+    </div>
+
+    <!-- Profile card md-->
+    <div class="col-7 col-md-4">
+      <div class="card">
+        <h1 class="h6 card-header">
+          <span class="sr-only">User profile for</span>
+          <%= @user.username %>
+        </h1>
+        <img class="card-img-inline w-100 d-none d-md-block" alt=""
+             src="<%= gravatar_url(@user.email, 128) %>" />
+
+        <div class="card-body">
+          <div class="small card-profile-location">
+            <%= @user.profile.location %>
+          </div>
+
+          <div class="small card-profile-homepage">
+            <a href="<%= @user.profile.home_page %>">
+              <%= @user.profile.home_page %>
+            </a>
+          </div>
+
+          <hr/>
+
+          <blockquote class="card-profile-about">
+            <%= @user.profile.about_me %>
+          </blockquote>
+        </div>
+
+        <div class="card-footer small">
+          <span>Joined on</span>
+          <span><%= @user.created_at %></span>
+        </div>
+      </div>
+    </div> <!-- /.col-md-3 -->
+
+    <hr class="col-12 my-4 d-md-none"/>
+
+    <!-- Quotes list -->
+    <div class="col-md-8">
+      <h2 class="h4">Quotes by <%= @user.username %></h2>
+      <ul class="list-group quotes-index">
+        <% @user.quotes.each do |quote| %>
+          <%= link_to quote,
+            class: "list-group-item list-group-item-action index-quote" do %>
+            <h3 class="quote-text"><%= quote.text %></h3>
+            <span class="quote-source"><%= quote.source %></span>
+          <% end %>
+        <% end %>
+      </ul>
+    </div> <!-- /.col-md-9 -->
+
+  </div>
+</div>

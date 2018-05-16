@@ -5,43 +5,77 @@
 
   <div class="card card-default">
     <div class="card-body">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name,
+                   url: registration_path(resource_name)) do |f| %>
+        <div class="form-row">
 
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",
-            class: "form-control", placeholder: "Email address" %>
-        </div>
+          <div class="form-group col-md-6">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+              class: "form-control", placeholder: "Email address" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :username %>
-          <%= f.text_field :username, autocomplete: "username",
-            class: "form-control", placeholder: "Username" %>
-        </div>
+          <div class="form-group col-md-6">
+            <%= f.label :username %>
+            <%= f.text_field :username, autocomplete: "username",
+              class: "form-control", placeholder: "Username" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "off",
-            class: "form-control", placeholder: "Password",
-            aria: { describedby: "passwordHelpBlock" } %>
-          <% if @minimum_password_length %>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-              (<%= @minimum_password_length %> characters minimum)
-            </small>
+          <div class="form-group col-md-6">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off",
+              class: "form-control", placeholder: "Password",
+              aria: { describedby: "passwordHelpBlock" } %>
+            <% if @minimum_password_length %>
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                (<%= @minimum_password_length %> characters minimum)
+              </small>
+            <% end %>
+          </div>
+
+          <div class="form-group col-md-6">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+              class: "form-control", placeholder: "Password confirmation" %>
+          </div>
+
+          <hr class="w-100 my-4" />
+
+          <%= f.fields_for :profile, @user.profile do |pf| %>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= pf.label :about_me %>
+                <%= pf.text_area :about_me,
+                  class: "form-control form-control-textarea-2x",
+                  placeholder: "About me" %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= pf.label :location %>
+                <%= pf.text_field :location,
+                  class: "form-control", placeholder: "Location" %>
+              </div>
+
+              <div class="form-group">
+                <%= pf.label :home_page %>
+                <%= pf.url_field :home_page,
+                  class: "form-control", placeholder: "Home page" %>
+              </div>
+            </div>
           <% end %>
-        </div>
 
-        <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off",
-            class: "form-control", placeholder: "Password confirmation" %>
-        </div>
+        </div><!-- /.form-row -->
+
+        <hr class="w-100 my-4"/>
 
         <div class="actions">
           <%= f.submit "Sign up", class: "btn btn-primary form-control" %>
         </div>
+
       <% end %>
-    </div>
+    </div><!-- /.card-body -->
 
     <div class="card-footer">
       <%= render "devise/shared/links" %>

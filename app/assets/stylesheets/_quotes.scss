@@ -1,0 +1,56 @@
+$quote-header-font-size: $font-size-base;
+
+$quote-header-height-computed:
+  $quote-header-font-size * $line-height-base +
+  $card-spacer-y * 2;
+$quote-img-size: $quote-header-height-computed;
+$quote-caret-size: $quote-header-height-computed / 2;
+$quote-img-spacer: $quote-caret-size;
+
+.quote-card {
+  margin: 0 0 0 ($quote-img-size + $quote-img-spacer);
+}
+
+.quote-header {
+  font-size: $quote-header-font-size;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: solid transparent;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 100%;
+    top: $quote-header-height-computed / 2;
+    width: 0;
+  }
+
+  &::before {
+    border-right-color: $card-border-color;
+    border-width: calc(#{$quote-caret-size} / 2 + 1px);
+    margin-top: calc(-#{$quote-caret-size} / 2 - 1px);
+  }
+
+  &::after {
+    border-right-color: mix($black, $white, 3%);
+    border-width: $quote-caret-size / 2;
+    margin-top: -$quote-caret-size / 2;
+  }
+}
+
+.quote-user-img {
+  border-radius: $border-radius-lg;
+  float: left;
+  height: $quote-img-size;
+  width: $quote-img-size;
+}
+
+.quote-user-link {
+  color: $body-color;
+  font-weight: bold;
+
+  &:hover {
+    color: $body-color;
+  }
+}

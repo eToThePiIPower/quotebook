@@ -1,18 +1,29 @@
 <div class="container">
-  <div class="card card-default">
-    <div class="card-body">
-      <p class=quote-text><%= @quote.text %></p>
-      <span class="quote-source"><%= @quote.source %></span>
-      <span class="small text-muted d-block text-right"><%= @quote.user.username %></span>
-    </div>
-    <div class="card-footer">
-      <%= link_to 'Back', quotes_path %>
-      <% if user_signed_in? && current_user == @quote.user %>
-        <%= link_to 'Edit', edit_quote_path(@quote) %>
-        <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="quote-card-wrapper">
+    <%= link_to @quote.user, class: "quote-user-img-link" do %>
+      <img src="<%= gravatar_url(@quote.user.email, 64)%>"
+           alt="" class="quote-user-img" />
     <% end %>
+
+    <div class="card quote-card">
+      <div class="card-header quote-header">
+        <%= link_to @quote.user.username,
+          @quote.user, class: "quote-user-link" %>
+        <span class="small text-muted">posted</span>
+      </div>
+
+      <div class="card-body">
+        <p class=quote-text><%= @quote.text %></p>
+        <span class="quote-source"><%= @quote.source %></span>
+      </div>
+
+      <div class="card-footer">
+        <%= link_to 'Back', quotes_path %>
+        <% if user_signed_in? && current_user == @quote.user %>
+          <%= link_to 'Edit', edit_quote_path(@quote) %>
+          <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-

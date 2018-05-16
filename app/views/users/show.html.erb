@@ -1,14 +1,20 @@
 <div class="container">
   <div class="row my-5">
 
-    <!-- Profile card -->
-    <div class="col-md-4">
+    <!-- Profile img xs -->
+    <div class="col-5 d-md-none">
+      <img class="w-100 rounded border"
+           src="<%= gravatar_url(@user.email, 256) %>" alt="">
+    </div>
+
+    <!-- Profile card md-->
+    <div class="col-7 col-md-4">
       <div class="card">
         <h1 class="h6 card-header">
           <span class="sr-only">User profile for</span>
           <%= @user.username %>
         </h1>
-        <img class="card-img-inline w-100" alt=""
+        <img class="card-img-inline w-100 d-none d-md-block" alt=""
              src="<%= gravatar_url(@user.email, 128) %>" />
 
         <div class="card-body">
@@ -35,6 +41,8 @@
         </div>
       </div>
     </div> <!-- /.col-md-3 -->
+
+    <hr class="col-12 my-4 d-md-none"/>
 
     <!-- Quotes list -->
     <div class="col-md-8">

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'api/v1/quotes/index', type: :view do
+RSpec.describe 'api/v0/quotes/index', type: :view do
   before(:each) do
     @quotes = assign(:quotes, [
       create(:quote, text: 'MyText1'),

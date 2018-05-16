@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'api/v1/users/index', type: :view do
+RSpec.describe 'api/v0/users/index', type: :view do
   before(:each) do
     @users = assign(:users, [
       create(:user, username: 'User1'),

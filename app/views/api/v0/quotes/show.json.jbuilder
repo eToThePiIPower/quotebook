@@ -1,5 +1,5 @@
 json.status 'success'
 json.data do
-  json.partial! 'api/v1/users/user', user: @user
+  json.partial! 'api/v0/quotes/quote', quote: @quote
 end
 json.code 200

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v0 do
       resources :quotes, only: [:index, :show]
       resources :users, only: [:index, :show]
+      get '*path', to: 'errors#invalid_path'
     end
   end
 end

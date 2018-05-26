@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="/">Quotebook</a>
+  <a class="navbar-brand" href="/"><%= t('quotebook') %></a>
   <button class="navbar-toggler" type="button"
           data-toggle="collapse" data-target="#navbar"
           aria-expanded="false" aria-controls="navbar"
@@ -9,9 +9,9 @@
 
   <div id="navbar" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+      <li class="nav-item"><a class="nav-link" href="/"><%= t('menu.home') %></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><%= t('menu.about') %></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><%= t('menu.help') %></a></li>
     </ul>
     <hr class="dropdown-divider">
     <ul class="navbar-nav ml-auto">

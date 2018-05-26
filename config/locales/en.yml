@@ -30,4 +30,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  quotebook: "Quotebook"
+  menu:
+    home: "Home"
+    about: "About"
+    help: "Help"
+    sign_up: "Sign up"
+    or: "or"
+    sign_in: "Sign in"
+  alerts:
+    notice: "Notice:"
+    alert: "Alert:"
+  quote:
+    edit:
+      heading: "editing quote"
+    errors:
+      prohibitted: "prohibitted this quote from being saved:"
+    index:
+      heading: "quotes"
+    meta:
+      posted_on: "posted"
+    new:
+      heading: "new quote"
+  user:
+    meta:
+      joined_on: "joined on"
+    show:
+      heading: "user profile for:"
+      quotes: "quotes by"

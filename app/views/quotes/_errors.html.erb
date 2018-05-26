@@ -1,9 +1,9 @@
 <% if @quote.errors.any? %>
   <div id="error_explanation" class="alert alert-dismissable alert-danger">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <span class="icon-close" aria-hidden="true"></span>
     </button>
-    <strong><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</strong>
+    <strong><%= pluralize(@quote.errors.count, "error") %> <%= t('quote.errors.prohibitted') %></strong>
     <ul class="mb-0">
       <% @quote.errors.full_messages.each do |message| %>
         <li><%= message %></li>

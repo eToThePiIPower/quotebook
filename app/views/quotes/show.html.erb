@@ -9,11 +9,11 @@
       <div class="card-header quote-header">
         <%= link_to @quote.user.username,
           @quote.user, class: "quote-user-link" %>
-        <span class="small text-muted">posted</span>
+        <span class="small text-muted"><%= t('quote.meta.posted_on') %></span>
       </div>
 
       <div class="card-body">
-        <p class=quote-text><%= @quote.text %></p>
+        <p class="quote-text"><%= @quote.text %></p>
         <span class="quote-source"><%= @quote.source %></span>
       </div>
 

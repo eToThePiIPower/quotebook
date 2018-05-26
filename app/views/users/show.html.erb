@@ -11,7 +11,7 @@
     <div class="col-7 col-md-4">
       <div class="card">
         <h1 class="h6 card-header">
-          <span class="sr-only">User profile for</span>
+          <span class="sr-only"><%= t('user.show.heading').capitalize %></span>
           <%= @user.username %>
         </h1>
         <img class="card-img-inline w-100 d-none d-md-block" alt=""
@@ -36,7 +36,7 @@
         </div>
 
         <div class="card-footer small">
-          <span>Joined on</span>
+          <span><%= t('user.meta.joined_on').capitalize %></span>
           <span><%= @user.created_at %></span>
         </div>
       </div>
@@ -46,7 +46,7 @@
 
     <!-- Quotes list -->
     <div class="col-md-8">
-      <h2 class="h4">Quotes by <%= @user.username %></h2>
+      <h2 class="h4"><%= t('user.show.quotes').capitalize %> <%= @user.username %></h2>
       <ul class="list-group quotes-index">
         <% @user.quotes.each do |quote| %>
           <%= link_to quote,

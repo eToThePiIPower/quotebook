@@ -1,9 +1,9 @@
 <li class="nav-item">
-  <%= link_to 'Sign in', new_user_session_path,
+  <%= link_to t('menu.sign_in'), new_user_session_path,
     class: 'nav-link' %>
 </li>
-<span class="navbar-text d-none d-md-inline">or</span>
+<span class="navbar-text d-none d-md-inline"><%= t('menu.or') %></span>
 <li class="nav-item">
-  <%= link_to 'Sign up', new_user_registration_path,
+  <%= link_to t('menu.sign_up'), new_user_registration_path,
     class: 'btn btn-outline-primary my-2 my-md-0 ml-md-2' %>
 </li>

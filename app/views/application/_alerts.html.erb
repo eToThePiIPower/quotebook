@@ -3,9 +3,9 @@
   <% if notice %>
     <div class="alert alert-dismissable alert-success">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+        <i class="icon-close" aria-hidden="true"></i>
       </button>
-      <strong>Notice:</strong>
+      <strong><%= t('alerts.notice') %></strong>
       <span><%= notice %></span>
     </div>
   <% end %>
@@ -13,9 +13,9 @@
   <% if alert %> 
     <div class="alert alert-dismissable alert-warning">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+        <i class="icon-close" aria-hidden="true"></i>
       </button>
-      <strong>Alert:</strong>
+      <strong><%= t('alerts.alert') %></strong>
       <span><%= alert %></span>
     </div>
   <% end %>

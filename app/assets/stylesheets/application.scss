@@ -44,3 +44,9 @@
 .form-control-textarea-3x {
   height: calc(3*(2px + 1.5rem + 2*0.375rem + 1rem + #{$font-size-sm}*1.5 + 3px) - 1rem - #{$font-size-sm}*1.5 - 3px);
 }
+
+.icon-close {
+  &::before {
+    content: '\d7';
+  }
+}

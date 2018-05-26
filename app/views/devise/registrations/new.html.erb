@@ -1,7 +1,7 @@
 <div class="container">
   <%= render 'errors' %>
 
-  <h1>Sign up</h1>
+  <h1><%= t('devise.registrations.new_heading') %></h1>
 
   <div class="card card-default">
     <div class="card-body">
@@ -28,7 +28,7 @@
               aria: { describedby: "passwordHelpBlock" } %>
             <% if @minimum_password_length %>
               <small id="passwordHelpBlock" class="form-text text-muted">
-                (<%= @minimum_password_length %> characters minimum)
+                (<%= t('devise.passwords.characters_minimum', minimum_characters: @minimum_password_length) %>)
               </small>
             <% end %>
           </div>

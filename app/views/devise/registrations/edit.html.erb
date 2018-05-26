@@ -1,7 +1,7 @@
 <div class="container">
   <%= render 'errors' %>
 
-  <h1>Edit <%= resource_name.to_s.humanize %></h1>
+  <h1><%= t('devise.registrations.edit_heading', resource_name: resource_name.to_s.humanize) %></h1>
 
   <div class="card card-default">
     <div class="card-body">
@@ -15,7 +15,7 @@
             <%= f.text_field :username, autocomplete: "username",
               disabled: true, aria: { describedby: "usernameHelpText" },
               class: "form-control", placeholder: "Username" %>
-            <small class="form-text text-muted">Usernames currently cannot be changed.</small>
+            <small class="form-text text-muted"><%= t('devise.registrations.username_cannot_be_editted') %></small>
           </div>
 
           <div class="form-group col-md-6">
@@ -24,7 +24,7 @@
               class: "form-control", placeholder: "Email address" %>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <small class="form-text text-muted">
-                Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+                <%= t('devise.registrations.waiting', email: resource.unconfirmed_email) %>
               </small>
             <% end %>
           </div>
@@ -35,9 +35,11 @@
               class: "form-control", placeholder: "Password",
               aria: { describedby: "passwordHelpBlock" } %>
             <small id="passwordHelpBlock" class="form-text text-muted">
-              <span>(leave blank if you don't want to change it)</span>
+              <span><%= t('devise.passwords.leave_blank') %></span>
               <% if @minimum_password_length %>
-                (<%= @minimum_password_length %> characters minimum)
+                <span>
+                  <%= t('devise.passwords.characters_minimum', minimum_characters: @minimum_password_length) %>
+                </span>
               <% end %>
             </small>
           </div>
@@ -54,7 +56,7 @@
               class: "form-control", placeholder: "Current password",
               aria: { describedby: "currentPasswordHelpBlock" } %>
             <small id="currentPasswordHelpBlock" class="form-text text-muted">
-              (we need your current password to confirm your changes)
+              <%= t('devise.passwords.current_password') %>
             </small>
           </div>
 
@@ -102,10 +104,10 @@
   </div>
 
   <div class="card card mt-4">
-    <h3 class="card-header bg-danger text-white h5">Cancel my account</h3>
+    <h3 class="card-header bg-danger text-white h5"><%= t('devise.registrations.cancel_your_account') %></h3>
     <div class="card-body">
-      <p>Unhappy?</p>
-      <%= button_to "Cancel my account", registration_path(resource_name),
+      <p><%= t('devise.registrations.unhappy') %></p>
+      <%= button_to t('devise.registrations.cancel_your_account'), registration_path(resource_name),
         class: "btn btn-danger mx-auto d-block",
         data: { confirm: "Are you sure?" }, method: :delete %>
     </div>

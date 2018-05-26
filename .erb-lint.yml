@@ -19,6 +19,7 @@ linters:
     enabled: true
     exclude:
       - '*.yml'
+      - '**/mailer/*.html.erb'
   NoJavascriptTagHelper:
     enabled: true
     correction_style: 'plain'

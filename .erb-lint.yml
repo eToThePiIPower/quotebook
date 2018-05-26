@@ -1,0 +1,48 @@
+linters:
+  AllowedScriptType:
+    enabled: true
+    allowed_types:
+      - 'application/json'
+      - 'text/javascript'
+      - 'text/html'
+    allow_blank: false
+  DeprecatedClasses:
+    enabled: true
+    rule_set:
+      - deprecated: ['well[-_\w]*']
+        suggestion: "Use 'card' instead of well"
+  ErbSafety:
+    enabled: true
+  FinalNewline:
+    enabled: true
+  HardCodedString:
+    enabled: true
+    exclude:
+      - '*.yml'
+  NoJavascriptTagHelper:
+    enabled: true
+    correction_style: 'plain'
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+      Layout/InitialIndentation:
+        Enabled: false
+      Layout/TrailingBlankLines:
+        Enabled: false
+      Layout/TrailingWhitespace:
+        Enabled: false
+      Naming/FileName:
+        Enabled: false
+      Style/FrozenStringLiteralComment:
+        Enabled: false
+      Metrics/LineLength:
+        Enabled: false
+      Lint/UselessAssignment:
+        Enabled: false
+      # Rails/OutputSafety:
+      #   Enabled: false
+  RightTrim:
+    enabled: true
+    enforced_style: '-'

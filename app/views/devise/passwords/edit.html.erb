@@ -9,10 +9,10 @@
         <%= f.hidden_field :reset_password_token %>
 
         <div class="form-group">
-          <%= f.label :password, "New password" %>
-          <%= f.password_field :password, autofocus: true, autocomplete: "off",
-            class: "form-control", placeholder: "Password",
-            aria: { describedby: "passwordHelpBlock" } %>
+          <%= f.label :password, 'New password' %>
+          <%= f.password_field :password, autofocus: true, autocomplete: 'off',
+                                          class: 'form-control', placeholder: 'Password',
+                                          aria: { describedby: 'passwordHelpBlock' } %>
           <% if @minimum_password_length %>
             <small id="passwordHelpBlock" class="form-text text-muted">
               (<%= t('devise.passwords.characters_minimum', minimum_characters: @minimum_password_length) %>)
@@ -21,20 +21,20 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation, "Confirm new password" %>
-          <%= f.password_field :password_confirmation, autocomplete: "off",
-            class: "form-control", placeholder: "Password confirmation" %>
+          <%= f.label :password_confirmation, 'Confirm new password' %>
+          <%= f.password_field :password_confirmation, autocomplete: 'off',
+                                                       class: 'form-control', placeholder: 'Password confirmation' %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Change my password",
-            class: "btn btn-primary form-control" %>
+          <%= f.submit 'Change my password',
+                class: 'btn btn-primary form-control' %>
         </div>
       <% end %>
     </div>
 
     <div class="card-footer">
-      <%= render "devise/shared/links" %>
+      <%= render 'devise/shared/links' %>
     </div>
   </div>
 </div>

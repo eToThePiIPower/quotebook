@@ -4,7 +4,7 @@
     <!-- Profile img xs -->
     <div class="col-5 d-md-none">
       <img class="w-100 rounded border"
-           src="<%= gravatar_url(@user.email, 256) %>" alt="">
+           src="<%= gravatar_url(@user.email, 256) %>" alt="" />
     </div>
 
     <!-- Profile card md-->
@@ -28,7 +28,7 @@
             </a>
           </div>
 
-          <hr/>
+          <hr />
 
           <blockquote class="card-profile-about">
             <%= @user.profile.about_me %>
@@ -42,7 +42,7 @@
       </div>
     </div> <!-- /.col-md-3 -->
 
-    <hr class="col-12 my-4 d-md-none"/>
+    <hr class="col-12 my-4 d-md-none" />
 
     <!-- Quotes list -->
     <div class="col-md-8">
@@ -50,7 +50,7 @@
       <ul class="list-group quotes-index">
         <% @user.quotes.each do |quote| %>
           <%= link_to quote,
-            class: "list-group-item list-group-item-action index-quote" do %>
+                class: 'list-group-item list-group-item-action index-quote' do %>
             <h3 class="quote-text"><%= quote.text %></h3>
             <span class="quote-source"><%= quote.source %></span>
           <% end %>

@@ -3,7 +3,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span class="icon-close" aria-hidden="true"></span>
     </button>
-    <strong><%= pluralize(@quote.errors.count, "error") %> <%= t('quote.errors.prohibitted') %></strong>
+    <strong><%= pluralize(@quote.errors.count, 'error') %> <%= t('quote.errors.prohibitted') %></strong>
     <ul class="mb-0">
       <% @quote.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,4 +11,3 @@
     </ul>
   </div>
 <% end %>
-
